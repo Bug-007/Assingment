@@ -1,7 +1,6 @@
 const express = require('express');
-const bankDetailRoute = require('./routes/bankDetail.js')
 const bodyParser = require('body-parser')
-const branchDetailRoute = require('./routes/bankDetail')
+const bankDetailRoute = require('./routes/bankDetail.js')
 const app = express();
 
 const PORT = 3000;
