@@ -12,7 +12,7 @@ const getAllBanks = async (req, res) => {
 
 const getBranchDetails = async (request, response) => {
 
-    const branch = request.query.branch;
+    const branch = request.params.branch;
   
     await pool.query('SELECT * FROM branches WHERE branch = $1', [branch], (error, results) => {
       if (error) {

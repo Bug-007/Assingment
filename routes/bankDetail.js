@@ -5,6 +5,6 @@ const router = Router();
 
 
 router.get('/api/allbanks',getAllBanks);
-router.get('/branchdetail/',getBranchDetails);
+router.get('/branchdetail/:branch',getBranchDetails);
 
 module.exports = router;
