@@ -1,7 +1,7 @@
 const pool = require("../dbConnetion");
 
 const getAllBanks = async (req, res) => {
-  await pool.query("SELECT name FROM banks", (err, result) => {
+  await pool.query("SELECT * FROM banks", (err, result) => {
     if (err) {
       console.log(err);
     } else {
@@ -36,6 +36,5 @@ const getBranchDetails = async (request, response) => {
     })
   }
 
-  // http://localhost:3000/branchdetail/60/RTGS-HO
 
 module.exports = { getAllBanks, getBranchDetails, getBankBranchDetails };
