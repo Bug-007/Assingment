@@ -22,4 +22,20 @@ const getBranchDetails = async (request, response) => {
     })
   }
 
-module.exports = { getAllBanks, getBranchDetails };
+
+  const getBankBranchDetails = async (request, response) => {
+
+    const branch = request.params.branch;
+    const bankid = parseInt(request.params.bankid);
+
+    await pool.query('SELECT * FROM branches WHERE branch = $1 and bank_id = $2', [branch, bankid], (error, results) => {
+      if (error) {
+        throw error;
+      }
+      response.status(200).json(results.rows)
+    })
+  }
+
+  // http://localhost:3000/branchdetail/60/RTGS-HO
+
+module.exports = { getAllBanks, getBranchDetails, getBankBranchDetails };

@@ -1,10 +1,11 @@
 const { Router } = require('express');
-const {getAllBanks} = require('../controller/controllerBankDetail')
-const {getBranchDetails} = require('../controller/controllerBankDetail')
+const controller = require('../controller/controllerBankDetail')
 const router = Router();
 
 
-router.get('/api/allbanks',getAllBanks);
-router.get('/branchdetail/:branch',getBranchDetails);
+router.get('/api/allbanks', controller.getAllBanks);
+router.get('/branchdetail/:branch', controller.getBranchDetails);
+router.get('/branchdetail/:bankid/:branch', controller.getBankBranchDetails);
+
 
 module.exports = router;
